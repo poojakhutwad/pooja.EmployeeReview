@@ -1,0 +1,118 @@
+<html>
+<form #empInfo = "ngForm"   (ngSubmit)="SubmitForm(empRevInfo)" class="border border-light p-5">
+  <div class="container-fluid" class="border border-light p-5">
+    <!-- <div class="panel panel-info">
+    <div class="panel-body"> -->
+  <h1>30 Day Employee Review</h1>
+  <div  class="form-group">
+    <label>Employee's Name:</label>
+    <div class="row">
+      <div class="col">
+        <input type="text" class="form-control" name="firstName" [(ngModel)]="empRevInfo.firstName">
+      </div>
+      <div class="col">
+        <input type="text" class="form-control" name="lastName" [(ngModel)]="empRevInfo.lastName">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+         <small>First Name</small>
+      </div>
+      <div class="col">
+          <small>Last Name</small>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+     <label>Employee's Hire Date</label>
+     <div class="row">
+     <div class="col-sm-2">
+      <select class="custom-select" name="day" [(ngModel)]="empRevInfo.day">
+        <option *ngFor="let value of days">{{value}}</option>     
+      </select>
+    </div>
+    <div class="col-sm-2">
+      <select class="custom-select" name="month" [(ngModel)]="empRevInfo.month">
+        <option *ngFor="let value of months">{{value}}</option>     
+      </select>
+    </div>
+    <div class="col-sm-3">
+        <select class="custom-select" name="year" [(ngModel)]="empRevInfo.year">
+          <option *ngFor="let value of years">{{value}}</option>     
+        </select>
+    </div>
+      <div class="col-sm-2">
+      <i class="fa fa-calendar" style="padding-top: 10px;"></i>
+  </div>
+  </div>
+  </div>
+  
+
+  <div class="form-group">
+            <label>Employee's Title:</label>
+    <div class="row">
+      <div class="col">
+       <input type="text" class="form-control" name="employeeTitle" [(ngModel)]="empRevInfo.empTitle">
+      </div>
+    </div>
+  </div>
+  
+
+  <div class="form-group">
+      <label>Employee's Department:</label>
+       <select class="custom-select" name="empDepartment" [(ngModel)]="empRevInfo.empDepartment">
+        <option selected>Select Department</option>
+        <option *ngFor="let value of departments">{{value}}</option>     
+       </select>
+  </div>
+
+
+  <div class="form-group">
+     <label>Overall,I would rank this employee's performance as: </label>
+     <div class="radio">
+        <label><input type="radio" name="empPerformance" value="Very good" [(ngModel)]="empRevInfo.empPerformance">Very good</label>&nbsp;
+        <label><input type="radio" name="empPerformance" value="Good" [(ngModel)]="empRevInfo.empPerformance">Good</label>&nbsp;
+        <label><input type="radio" name="empPerformance" value="Fair" [(ngModel)]="empRevInfo.empPerformance">Fair</label>&nbsp;
+        <label><input type="radio" name="empPerformance" value="Poor" [(ngModel)]="empRevInfo.empPerformance">Poor</label>&nbsp;
+        <label><input type="radio" name="empPerformance" value="Very poor" [(ngModel)]="empRevInfo.empPerformance">Very poor</label>
+      </div>
+  </div>
+
+  <div class="form-group">
+      <label>Please go into more detail on why you chose this ranking:</label>
+      <textarea class="form-control rounded-0" id="exampleFormControlTextarea1" rows="10" name="ranking" [(ngModel)]="empRevInfo.ranking"></textarea>
+    </div>
+
+
+    <div  class="form-group">
+        <label>Supervisor's Name:</label>
+        <div class="row">
+          <div class="col">
+            <input type="text" class="form-control" name="superwiserFirstName" [(ngModel)]="empRevInfo.superwiserFirstName">
+          </div>
+          <div class="col">
+            <input type="text" class="form-control" name="superwiserLastName" [(ngModel)]="empRevInfo.superwiserLastName">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+             <small>First Name</small>
+          </div>
+          <div class="col">
+              <small>Last Name</small>
+          </div>
+        </div>
+      </div>
+
+  <div class="form-group">
+     <div class="row">
+    <div class="col-sm-4"></div>
+    <button class="btn btn-secondary btn-sm" type="submit">Submit Form</button>
+    </div>
+  </div>
+</div>
+<!-- </div>
+</div> -->
+</form>
+</html>

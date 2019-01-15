@@ -1,0 +1,15 @@
+<ng-template [ngIf]="empdata.isSubmited">
+<div style="text-align:center">
+        <h2>*****Employee Review Information*****</h2>
+    {{ empdata.firstName}} {{ empdata.lastName}}<br>
+    {{ empdata.day}}/{{ empdata.month}}/{{ empdata.year}}<br>
+    {{ empdata.empTitle}}<br>
+    {{ empdata.empDepartment}}<br>
+    {{ empdata.empPerformance}}<br>
+    {{ empdata.ranking}}<br>
+    {{ empdata.superwiserFirstName}} {{ empdata.superwiserLastName}}<br>
+</div>
+</ng-template>
+<ng-template [ngIf]="!empdata.isSubmited">
+<app-employee-review-form (empData)= " empdata = $event"></app-employee-review-form>
+</ng-template>
